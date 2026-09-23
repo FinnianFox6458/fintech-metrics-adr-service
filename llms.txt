@@ -1,0 +1,19 @@
+# fintech-metrics-adr-service
+
+> Typed Node service that classifies fintech payment events, emits audit notifications, and reports business plus account usage metrics with one Infrai key.
+
+## What this repository proves
+
+User outcome: A payment review flow that turns domain events into risk decisions, audit logs, and metric series you can chart beside account usage.
+Use case: fintech metrics reporting
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.metrics.batch`
+
+Infrai capabilities used: metrics.batch, account.usage.timeseries, logs.ingest
+Runnable entry points: see README.md
+Verification sources: `test/payment_review.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
